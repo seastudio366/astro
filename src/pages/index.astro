@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SwiperSlider from "../components/SwiperSlider.jsx";
+---
+
+<BaseLayout title="Home">
+  <!-- Heroセクション（スライドショー＋タイトル） -->
+  <section class="max-w-6xl mx-auto p-6 text-center">
+
+
+    <!-- Reactコンポーネントのスライドショー -->
+    <div class="rounded-lg overflow-hidden shadow-lg mb-10">
+      <SwiperSlider client:load />
+    </div>
+  </section>
+
+  <!-- 会社紹介セクション -->
+  <section class="max-w-5xl mx-auto p-6 text-gray-800 leading-relaxed text-center">
+    <h2 class="text-2xl font-semibold mb-6 text-center">破片に命を吹き込む</h2>
+
+    <p class="mb-6 text-lg">
+      通常は廃棄されるガラスや陶器の破片を独自の研磨技術で滑らかに磨き上げ、<br />
+	  シーグラスやシーポッタリーとして新たな命を吹き込みます。<br />
+      色とりどりのビー玉は淡く神秘的な光を放つ「シーマーブル」へと生まれ変わります。<br /><br />
+      割れてしまったお気に入りのコップや、思い出のある陶器のかけら── <br /> 
+      そんな欠片にも、もう一度輝きを取り戻すことができます。<br />
+      あなたの思い出の品も、海辺の宝石のように美しくよみがえらせてみませんか。
+    </p>
+
+    <!-- Before / After 画像 -->
+    <div class="grid md:grid-cols-2 gap-6 items-center mt-10">
+      <div>
+        <img
+          src="/images/before_glass.jpg"
+          alt="加工前のガラス"
+          class="rounded-lg shadow-md w-full object-cover"
+        />
+        <p class="text-sm text-gray-600 mt-2 text-center">加工前のガラス片</p>
+      </div>
+      <div>
+        <img
+          src="/images/after_seaglass.jpg"
+          alt="シーグラス化後のガラス"
+          class="rounded-lg shadow-md w-full object-cover"
+        />
+        <p class="text-sm text-gray-600 mt-2 text-center">シーグラス化後のガラス</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="お問い合わせ">
+  <div class="max-w-3xl mx-auto p-6">
+    <!-- ページタイトル -->
+    <h1 class="text-3xl font-bold mb-4 text-center">お問い合わせ</h1>
+    <p class="mb-6 text-center text-gray-700">
+      ご質問・ご相談・ご依頼はこちらからご連絡ください。
+    </p>
+
+    <!-- お問い合わせフォーム -->
+    <form 
+      action="https://formspree.io/f/xjkjkobj" 
+      method="POST" 
+      class="space-y-4 bg-white p-6 rounded-lg shadow-md"
+    >
+      <!-- 名前 -->
+      <div>
+        <label for="name" class="block font-semibold mb-1">お名前</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          required 
+          class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </div>
+
+      <!-- メール -->
+      <div>
+        <label for="email" class="block font-semibold mb-1">メールアドレス</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required 
+          class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </div>
+
+      <!-- メッセージ -->
+      <div>
+        <label for="message" class="block font-semibold mb-1">お問い合わせ内容</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          required 
+          rows="6" 
+          class="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        ></textarea>
+      </div>
+
+      <!-- 送信ボタン -->
+      <div class="text-center">
+        <button 
+          type="submit" 
+          class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+        >
+          送信
+        </button>
+      </div>
+    </form>
+  </div>
+</BaseLayout>

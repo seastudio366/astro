@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// サンプル商品データ
+const seaglassProducts = [
+  { id: 1, name: "シーグラスA", desc: "海で拾った美しいガラス\n透明感が魅力", image: "/images/sg01.JPG", price: "¥500" },
+  { id: 2, name: "シーグラスB", desc: "丸みのある自然な形\nインテリアにも最適", image: "/images/sg02.JPG", price: "¥800" },
+  { id: 3, name: "シーグラスC", desc: "色とりどりのシーグラス\nアクセサリーにも", image: "/images/seaglass3.JPG", price: "¥1200" },
+  { id: 4, name: "シーグラスD", desc: "ビーチで磨かれた美しい形\n手作り雑貨にも", image: "/images/seaglass4.JPG", price: "¥1500" },
+  { id: 5, name: "シーグラスE", desc: "光に透けるカラフルな色\n観賞用にも", image: "/images/seaglass5.JPG", price: "¥1800" },
+];
+---
+
+<BaseLayout title="シーグラス">
+  <div class="max-w-6xl mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-6 text-center">シーグラス一覧</h1>
+
+    <!-- ここにFlexboxでカードを横並び -->
+    <div class="flex flex-wrap justify-center gap-128">
+      {seaglassProducts.map(product => (
+        <div class=" w-full sm:w-1/2 md:w-1/3">
+          <div class="border rounded overflow-hidden shadow hover:shadow-lg transition">
+            <img src={product.image} alt={product.name} class="w-full aspect-square object-cover" />
+            <div class="bg-white text-black p-2 text-sm">
+              {product.desc.split("\n").map(line => (
+                <p>{line}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
